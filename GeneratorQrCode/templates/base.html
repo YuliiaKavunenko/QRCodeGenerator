@@ -1,0 +1,27 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+        {% block links %}
+
+        {% endblock %}
+
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <header>
+            <a href="{% url '' %}">QR Cod G</a>
+            <a href="{% url 'generate' %}">Generate</a>
+            <a href="{% url 'contacts' %}">Contacts</a>
+            <a href="{% url 'my_qrcodes' %}">My QR Codes</a>
+            <a href="{% url 'login' %}">Login</a>
+        </header>
+
+        {% block content %}
+            
+        {% endblock %}
+    </body>
+</html>
