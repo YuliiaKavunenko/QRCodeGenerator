@@ -15,8 +15,11 @@
 
     <body>
         <header>
-            <a href="{% url 'home' %}" id = 'home-link'>QR Cod G</a>
-            <a href="{% url 'authorization' %}">Login</a>
+            <div id = "links-text">
+                <a href="{% url 'home' %}" id = 'home-link'>QR Cod G</a>
+                <a href="{% url 'authorization' %}">Login</a>
+            </div>
+            <hr class="custom-line">
         </header>
 
         {% block content %}
