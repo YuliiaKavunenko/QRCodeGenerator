@@ -16,9 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from generator_page.views import render_generatorpage
+from my_qrcodes_page.views import render_myqrcodespage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("generator_page/", render_generatorpage, name="generate"),
+    path("my_qrcodes_page/", render_myqrcodespage, name="myqrcodes")
     
     # path('contacts/', admin.site.urls),
     # path('generator_qrcodes/', admin.site.urls),
