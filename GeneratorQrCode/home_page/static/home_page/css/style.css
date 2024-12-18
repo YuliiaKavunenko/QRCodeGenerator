@@ -1,0 +1,214 @@
+#introduction-part{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 78px;
+}
+#first-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 78px;
+}
+#first-text *{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#first-text h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 48px;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#first-text h3{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 28px;
+    font-weight: normal;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#message-to-user{
+    width: 100%;
+    height: 80px;
+    background-color: #F2BA05;
+    border-radius: 10px;
+    padding: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#message-to-user h3{
+    font-size: 28px;
+    font-weight: normal;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#message-to-user a{
+    width: 245px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#steps-to-create{
+    width: 100vw;
+    height: 558px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #A8BDB6;
+    margin-bottom: 78px;
+}
+#steps-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#steps-content h2{
+    width: 100%;
+    font-size: 48px;
+    font-weight: bold;
+    color: #C4E3E6;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    margin-bottom: 28px;
+}
+#steps-pictures{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 28px;
+}
+#steps-text{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 28px;
+}
+#steps-text h3{
+    width: 428;
+    font-size: 28px;
+    font-weight: normal;
+    color: #C4E3E6;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+}
+
+#tariff-plans-part{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#first-text-for-tariffs{
+    width: 100%;
+    font-size: 28px;
+    font-weight: bold;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    margin-bottom: 66px;
+}
+#tariff-examples{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+#tariff-plans{
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+.examples{
+    width: 100%;
+    height: 132px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #F2BA05;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.examples h2{
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.examples h3{
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    font-size: 28px;
+    font-weight: normal;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#more-info{
+    display: flex;
+    width: 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5E0B3;
+    border-radius: 10px;
+    margin: 0;
+}
+.examples img{
+    display: flex;
+    width: 22px;
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+#examples{
+    background-color: #F5E0B3;
+    border-radius: 10px;
+    width: 316px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 21px;
+}
