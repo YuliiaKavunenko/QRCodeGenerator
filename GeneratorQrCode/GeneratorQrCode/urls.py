@@ -24,7 +24,7 @@ urlpatterns = [
     path('', render_home_page, name = "home"),
     path('user/', render_user_page, name = "user"),
     path('user/registration', render_registration_page, name = "registration"),
-    path('user/authorization', render_authorization_page, name = "home"),
+    path('user/authorization', render_authorization_page, name = "authorization"),
     
     # path('contacts/', admin.site.urls),
     # path('generator_qrcodes/', admin.site.urls),
