@@ -11,5 +11,21 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Authorization</h1>
+    <h2>LOG IN AND GENERATE WITHOUT LIMITATIONS!</h2>
+    <div id = 'message-user'>
+        <span class = 'message-text-user'>
+            <h3>IF YOU HAVE NOT REGISTERED YET, PLEASE GO TO THE NEXT PAGE...</h3>
+            <a href="registration">REGISTRATION</a>
+        </span>
+    </div>
+
+    <form id = 'authorization-form' method = "post">
+        {% csrf_token %}
+        <input type="email" name = "email" id = 'email-auth-input' class = 'authorization-inputs' placeholder="enter email">
+        <input type="password" name="password" id="password-auth-input" class = 'authorization-inputs' placeholder="enter password">
+
+        <button id = 'log-in'>
+            Log in
+        </button>
+    </form>
 {% endblock %}

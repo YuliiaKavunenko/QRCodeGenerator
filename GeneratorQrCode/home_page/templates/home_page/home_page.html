@@ -20,15 +20,16 @@
                 Unlock the power of seamless connectivity with our user-friendly QR Code Generator. Whether you're looking to enhance your marketing campaigns, share contact information effortlessly, or simply make your life more convenient, our tool provides a quick and easy way to create custom QR codes.
             </h3>
         </div>
-
-        <div id = 'message-to-user'>
-            <h3>
-                CURRENTLY YOU CAN GENERATE ONLY ONE QR CODE FOR 30-DAYS. TO INCREASE THE AREA OF YOUR OPPORTUNITIES GO TO THE NEXT STEP
-            </h3>
-            <a href="{% url 'registration' %}">
-                LOGIN
-            </a>
-        </div>
+        {% if is_authorizated == 0 %}
+            <div id = 'message-to-user'>
+                <h3>
+                    CURRENTLY YOU CAN GENERATE ONLY ONE QR CODE FOR 30-DAYS. TO INCREASE THE AREA OF YOUR OPPORTUNITIES GO TO THE NEXT STEP
+                </h3>
+                <a href="{% url 'registration' %}">
+                    LOGIN
+                </a>
+            </div>
+        {% endif %}
     </div>
 
     <div id = 'steps-to-create'>

@@ -1,0 +1,110 @@
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 44px;
+}
+#message-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #F2BA05;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    margin-bottom: 44px;
+}
+#message-user span{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.message-text-user a{
+    width: 245px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    font-size: 28px;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.message-text-user h3{
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    font-size: 28px;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#authorization-form{
+    background-color: #F2BA05;
+    width: 800px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 44px;
+    padding-top: 44px;
+    border-radius: 20px;
+}
+.authorization-inputs{
+    background-color: #F5E0B3;
+    width: 640px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    border-radius: 20px;
+    border: #D9A704 3px solid;
+    font-size: 30px;
+    font-weight: bold;
+    color: #C76363;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.authorization-inputs::placeholder{
+    color: #D9A704;
+}
+#log-in{
+    background-color: #F5E0B3;
+    width: 368px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: #D9A704 3px solid;
+    font-size: 30px;
+    font-weight: bold;
+    color: #D9A704;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+}

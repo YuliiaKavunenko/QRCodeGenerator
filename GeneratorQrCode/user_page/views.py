@@ -4,7 +4,10 @@ from django.shortcuts import render
 def render_user_page(request):
     return render(
         request = request,
-        template_name = "user_page/user_page.html"
+        template_name = "user_page/user_page.html",
+        context = {
+            'is_authorizated': 0
+        }
     )
 
 def render_registration_page(request):

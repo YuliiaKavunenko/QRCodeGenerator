@@ -11,5 +11,26 @@
 {% endblock %}
 
 {% block content %}
-    <h1>User page</h1>
+    <div id = 'content-user'>
+        {% if is_authorizated == 0 %}
+        <h2 class = 'introduction-user-text'>HELLO, USER! CHOOSE YOUR NEXT STEP:</h2>
+        <div id = 'message-user'>
+            <span class = 'message-text-user'>
+                <h3>IF YOU ARE ALREADY REGISTERED, THEN MOVE TO THE NEXT PAGE...</h3>
+                <a href="authorization">LOG IN</a>
+            </span>
+
+            <span class = 'message-text-user'>
+                <h3>IF YOU HAVE NOT REGISTERED YET, PLEASE GO TO THE NEXT PAGE...</h3>
+                <a href="registration">REGISTRATION</a>
+            </span>
+        </div>
+        {% else %}
+            <h2 class = 'introduction-user-text'>HELLO, Name! WE ARE GLAD THAT YOU ARE WITH US </h2>
+            <button id = 'log-out'>
+                LOG OUT
+            </button>
+        {% endif %}
+    </div>
+
 {% endblock %}
