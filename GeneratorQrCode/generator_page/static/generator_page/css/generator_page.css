@@ -1,0 +1,13 @@
+#qr-settings-window{
+    display: flex;
+    width: 820px;
+    height: 480px;
+    color: #F2BA05;
+}
+
+#QR-code-name{
+    width: 550px;
+    height: 60px;
+    background-color: #F5E0B3;
+    border-radius: 20px ;
+}
