@@ -15,6 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from . import settings
+from django.conf.urls.static import static
 from django.urls import path
 from home_page.views import render_home_page
 from user_page.views import render_user_page, render_registration_page, render_authorization_page, logout_user
@@ -31,3 +33,6 @@ urlpatterns = [
     path("generator_page/", render_generatorpage, name="generate"),
     path("my_qrcodes_page/", render_myqrcodespage, name="myqrcodes"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
