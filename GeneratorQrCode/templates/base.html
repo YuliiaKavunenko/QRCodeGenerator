@@ -15,9 +15,26 @@
 
     <body>
         <header>
-            <div id = "links-text">
-                <a href="{% url 'home' %}" id = 'home-link'>QR Cod G</a>
-                <a href="{% url 'authorization' %}">Login</a>
+            <div id="links-text">
+                <a href="{% url 'home' %}" id="home-link">QR Code</a>
+                <a href="{% url 'generate' %}" id = "generate-link">Generate</a>
+                <a href="{% url 'myqrcodes' %}" id = "myqrcodes-link">My QR code</a>
+                {% if user.is_authenticated %}
+                    <h2 id="username">{{ user.username }}</h2>
+                    <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" id="logout-button">Log out</button>
+                    </form>
+                {% else %}
+                    {% if current_page == "registration" %}
+                        <a href="{% url 'authorization' %}" id="login-link">Log in</a>
+                    {% elif current_page == "authorization" %}
+                        <a href="{% url 'registration' %}" id="registration-link">Registration</a>
+                    {% else %}
+                        <a href="{% url 'authorization' %}" id="login-link">Log in</a>
+                    {% endif %}
+                {% endif %}
+
             </div>
             <hr class="custom-line">
         </header>

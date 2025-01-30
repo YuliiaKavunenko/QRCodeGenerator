@@ -19,13 +19,27 @@
         </span>
     </div>
 
-    <form id = 'authorization-form' method = "post">
+    <form id="authorization-form" method="post">
         {% csrf_token %}
-        <input type="email" name = "email" id = 'email-auth-input' class = 'authorization-inputs' placeholder="enter email">
-        <input type="password" name="password" id="password-auth-input" class = 'authorization-inputs' placeholder="enter password">
-
-        <button id = 'log-in'>
+        <input 
+            type = "text" 
+            name = "username" 
+            id = "username-auth-input" 
+            class = "authorization-inputs {% if error_message %}error-input{% endif %}" 
+            placeholder = "Enter username">
+        <input 
+            type = "password" 
+            name = "password" 
+            id = "password-auth-input" 
+            class = "authorization-inputs {% if error_message %}error-input{% endif %}" 
+            placeholder = "Enter password">
+        {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+    
+        <button id="log-in">
             Log in
         </button>
     </form>
+    
 {% endblock %}

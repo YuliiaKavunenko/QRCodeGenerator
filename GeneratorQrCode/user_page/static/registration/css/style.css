@@ -55,7 +55,7 @@ h2{
 }
 
 #registration-form{
-    background-color: #F2BA05;
+    background-color: #A8BDB6;
     width: 800px;
     height: auto;
     display: flex;
@@ -69,7 +69,7 @@ h2{
     border-radius: 20px;
 }
 .registration-inputs{
-    background-color: #F5E0B3;
+    background-color: #EEFDFF;
     width: 640px;
     height: 60px;
     display: flex;
@@ -78,7 +78,7 @@ h2{
     justify-content: space-between;
     margin-bottom: 36px;
     border-radius: 20px;
-    border: #D9A704 3px solid;
+    border: #98A6A1 3px solid;
     font-size: 30px;
     font-weight: bold;
     color: #C76363;
@@ -87,10 +87,10 @@ h2{
     font-family: 'Josefin Sans', sans-serif;
 }
 .registration-inputs::placeholder{
-    color: #D9A704;
+    color: #98A6A1;
 }
 #registration{
-    background-color: #F5E0B3;
+    background-color: #EEFDFF;
     width: 368px;
     height: 70px;
     display: flex;
@@ -98,13 +98,16 @@ h2{
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    border: #D9A704 3px solid;
+    border: #98A6A1 3px solid;
     font-size: 30px;
     font-weight: bold;
-    color: #D9A704;
+    color: #98A6A1;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 15px;
     padding-top: 15px;
     font-family: 'Josefin Sans', sans-serif;
+}
+#login-link{
+    text-decoration: underline;
 }

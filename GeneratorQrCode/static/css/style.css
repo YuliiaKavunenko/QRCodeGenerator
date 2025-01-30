@@ -45,3 +45,32 @@ header div {
     border-top: 3px solid #F2BA05;
     width: 100%;
 }
+#username{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    font-size: 40px;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#logout-button{
+    background-color: #F0DFCD;
+    width: 185px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: #C76363 3px solid;
+    font-size: 30px;
+    font-weight: bold;
+    color: #C76363;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+}

@@ -1,0 +1,53 @@
+#my-saved-QR-code{
+    width: 600px;
+    height: 350px;
+    border-radius: 20px;
+    background-color: #A8BDB6;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+h1{
+    color: #EEFDFF;
+    font-size: 28;
+    font-family: Josefin Sans;
+    font-weight: bold;
+}
+
+button{
+    width: 205px;
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #EEFDFF;
+    font-family: "Josefin Sans";
+    font-size: 40px;
+    font-weight: 600;
+    color: #A8BDB6;
+}
+
+button + button {
+    margin-top: 20px;
+}
+
+#QR-code-image{
+    width: 300px;
+    height: 300px;
+    background-color: #EEFDFF;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+#info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+}
+#myqrcodes-link{
+    text-decoration: underline;
+}

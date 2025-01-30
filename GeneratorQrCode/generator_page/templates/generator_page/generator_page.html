@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'generator_page/css/generator_page.css' %}">
+{% endblock %}
+
+{% block title %}
+    Generator QR codes
+{% endblock %}
+
+{% block head %}
+    
+{% endblock %}
+
+{% block content %}
+    <div id="qr-wrapper">
+        <div id = "qr-settings-window">
+            <input type="text" name="QR code name" placeholder="QR code name" id="QR-code-name">
+            <input type="text" name="your link" placeholder="your link" id="your-link">
+            <input type="text" name="QR code description" placeholder="QR code description" id="QR-code-description">
+            <input type="text" name="image inside" placeholder="image inside" id="image-inside">
+            <button name = "go to design" id = "go-to-design">go to design</button>
+        </div>
+        <div id="QR-code-frame">
+            <div id="QR-code-image">
+
+            </div>
+        </div>
+    </div>
+    <div id="qr-wrapper-design">
+        <div id="qr-design-window">
+            <div id="inputs-container">
+                <input type="text" name="text font" placeholder="text font" id="text-font">
+                <input type="text" name="color (#0000)" placeholder="color (#0000)" id="color-(#0000)">
+                <input type="text" name="size" placeholder="size" id="size">
+                <input type="text" name="text to frame" placeholder="text to frame" id="text-to-frame">
+                <button name="generate" id="generate">generate</button>
+            </div>
+            <div id="frame-window">
+                <h1>frame</h1>
+                <button name="shape1" id="shape1">shape1</button>
+                <button name="shape2" id="shape2">shape2</button>
+                <button name="shape3" id="shape3">shape3</button>
+                <button name="shape4" id="shape4">shape4</button>
+            </div>
+        </div>
+        <div id="QR-code-frame-design">
+            <div id="QR-code-image-design"></div>
+        </div>
+    </div>
+    
+    
+{% endblock %}
+
