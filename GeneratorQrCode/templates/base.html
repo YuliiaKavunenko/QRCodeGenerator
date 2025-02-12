@@ -19,6 +19,7 @@
                 <a href="{% url 'home' %}" id="home-link">QR Code</a>
                 <a href="{% url 'generate' %}" id = "generate-link">Generate</a>
                 <a href="{% url 'myqrcodes' %}" id = "myqrcodes-link">My QR code</a>
+                <a href = "{% url 'contacts' %}" id = "contacts">Contacts</a>
                 {% if user.is_authenticated %}
                     <h2 id="username">{{ user.username }}</h2>
                     <form method="post" action="{% url 'logout' %}" style="display: inline;">

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block links %}
+{% endblock %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <h2>We are glad to see you here! You can leave your feedback to us!</h2>
+    <form method="post" id = "response-form">
+        <input type="text" name="your email" id="your-email" class="response-elements">
+        <input type="text" name="leave feedback!" id = "feedback" class="response-elements">
+        <button type="button" name="send-response">Send</button>
+    </form>
+{% endblock %}

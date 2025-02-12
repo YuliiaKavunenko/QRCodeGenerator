@@ -22,6 +22,8 @@ from home_page.views import render_home_page
 from user_page.views import render_user_page, render_registration_page, render_authorization_page, logout_user
 from generator_page.views import render_generatorpage
 from my_qrcodes_page.views import render_myqrcodespage
+from contacts_page.views import render_contacts_page
+from subscription_page.views import render_subscription_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +34,8 @@ urlpatterns = [
     path('user/logout', logout_user, name = "logout"),
     path("generator_page/", render_generatorpage, name = "generate"),
     path("my_qrcodes_page/", render_myqrcodespage, name = "myqrcodes"),
+    path('contacts_page/', render_contacts_page, name = "contacts"),
+    path('subscription_page/', render_subscription_page, name = "subscription"),
 ]
 
 if settings.DEBUG:
