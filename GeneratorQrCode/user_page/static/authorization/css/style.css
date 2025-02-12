@@ -108,6 +108,12 @@ h2{
     padding-top: 15px;
     font-family: 'Josefin Sans', sans-serif;
 }
+
+#log-in:hover{
+    background-color: #e8f5f0;
+    color: #A8BDB6;
+}
+
 #registration-link{
     text-decoration: underline;
 }

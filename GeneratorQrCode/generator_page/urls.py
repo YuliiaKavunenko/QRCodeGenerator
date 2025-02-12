@@ -3,5 +3,5 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('generator_page/', render_generatorpage, name="generate")
+    path('generator_page/', render_generatorpage, name="generate"),
 ]

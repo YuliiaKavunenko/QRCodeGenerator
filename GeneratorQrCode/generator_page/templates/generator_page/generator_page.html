@@ -4,7 +4,8 @@
 
 {% block links %}
     <link rel="stylesheet" href="{% static 'generator_page/css/generator_page.css' %}">
-{% endblock %}
+    <script src="{% static 'generator_page/js/generator_page.js' %}" defer></script>
+    {% endblock %}
 
 {% block title %}
     Generator QR codes
@@ -16,38 +17,48 @@
 
 {% block content %}
     <div id="qr-wrapper">
-        <div id = "qr-settings-window">
-            <input type="text" name="QR code name" placeholder="QR code name" id="QR-code-name">
-            <input type="text" name="your link" placeholder="your link" id="your-link">
-            <input type="text" name="QR code description" placeholder="QR code description" id="QR-code-description">
-            <input type="text" name="image inside" placeholder="image inside" id="image-inside">
-            <button name = "go to design" id = "go-to-design">go to design</button>
-        </div>
+        <form id="qr-settings-window">
+            {% csrf_token %}
+            <input type="text" name="QR-code-name" placeholder="QR code name" id="QR-code-name">
+            <input type="text" name="your-link" placeholder="Your link" id="your-link">
+            <button type="button" id="go-to-design">Go to design</button>
+        </form>
         <div id="QR-code-frame">
             <div id="QR-code-image">
 
             </div>
         </div>
     </div>
-    <div id="qr-wrapper-design">
-        <div id="qr-design-window">
-            <div id="inputs-container">
-                <input type="text" name="text font" placeholder="text font" id="text-font">
-                <input type="text" name="color (#0000)" placeholder="color (#0000)" id="color-(#0000)">
-                <input type="text" name="size" placeholder="size" id="size">
-                <input type="text" name="text to frame" placeholder="text to frame" id="text-to-frame">
-                <button name="generate" id="generate">generate</button>
+    <div id="block-design">
+        <form id="qr-wrapper-design" method="post">
+            {% csrf_token %}
+            <div id="qr-design-window">
+                <input type="hidden" name="action" value="generate">
+                <input type="hidden" name="QR-code-name" id="hidden-QR-code-name">
+                <input type="hidden" name="your-link" id="hidden-your-link">
+                <div id="inputs-container">
+                    <input type="color" name="color" placeholder="Color" id="color">
+                    <input type="number" name="size" placeholder="Size" id="size" min="100" max="1000">
+                    <input type="text" name="text-to-frame" placeholder="Text to frame" id="text-to-frame">
+                    <button type="submit" id="generate">Generate</button>
+                </div>
+                <div id="frame-window">
+                    <h1>frame</h1>
+                    <button name="shape1" id="shape1">shape1</button>
+                    <button name="shape2" id="shape2">shape2</button>
+                    <button name="shape3" id="shape3">shape3</button>
+                    <button name="shape4" id="shape4">shape4</button>
+                </div>
             </div>
-            <div id="frame-window">
-                <h1>frame</h1>
-                <button name="shape1" id="shape1">shape1</button>
-                <button name="shape2" id="shape2">shape2</button>
-                <button name="shape3" id="shape3">shape3</button>
-                <button name="shape4" id="shape4">shape4</button>
-            </div>
-        </div>
+            
+        </form>
         <div id="QR-code-frame-design">
-            <div id="QR-code-image-design"></div>
+            {% if qr_instance %}
+                <img src="{{ qr_instance.picture.url }}" alt="Generated QR Code">
+                <a href="{{ download_link }}" download>
+                    <button id="download">Download</button>
+                </a>
+            {% endif %}
         </div>
     </div>
     

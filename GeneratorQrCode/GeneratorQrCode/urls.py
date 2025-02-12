@@ -25,13 +25,13 @@ from my_qrcodes_page.views import render_myqrcodespage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', render_home_page, name="home"),
-    path('user/', render_user_page, name="user"),
-    path('user/registration', render_registration_page, name="registration"),
-    path('user/authorization', render_authorization_page, name="authorization"),
-    path('user/logout', logout_user, name="logout"),
-    path("generator_page/", render_generatorpage, name="generate"),
-    path("my_qrcodes_page/", render_myqrcodespage, name="myqrcodes"),
+    path('', render_home_page, name = "home"),
+    path('user/', render_user_page, name = "user"),
+    path('user/registration', render_registration_page, name = "registration"),
+    path('user/authorization', render_authorization_page, name = "authorization"),
+    path('user/logout', logout_user, name = "logout"),
+    path("generator_page/", render_generatorpage, name = "generate"),
+    path("my_qrcodes_page/", render_myqrcodespage, name = "myqrcodes"),
 ]
 
 if settings.DEBUG:

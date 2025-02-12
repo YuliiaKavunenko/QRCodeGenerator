@@ -5,5 +5,5 @@ class QRCodes(models.Model):
     name = models.CharField(max_length = 100)
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     link = models.TextField()
-    picture = models.ImageField(upload_to = 'my_qrcodes_page/static/my_qrcodes_page/images/')
+    picture = models.ImageField(upload_to = 'images/')
     date = models.DateTimeField(auto_now_add = True)

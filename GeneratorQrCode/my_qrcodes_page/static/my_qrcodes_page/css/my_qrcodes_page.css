@@ -18,7 +18,7 @@ h1{
 button{
     width: 205px;
     height: 70px;
-    border-radius: 10px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,6 +27,12 @@ button{
     font-family: "Josefin Sans";
     font-size: 40px;
     font-weight: 600;
+    color: #A8BDB6;
+    border: 3px #98A6A1 solid;
+}
+
+#button:hover{
+    background-color: #e8f5f0;
     color: #A8BDB6;
 }
 

@@ -19,10 +19,11 @@
         <div id="QR-code-image"></div>
         <div id="info-section">
             <h1>QR CODE NAME</h1>
-            <div>
+            <form method="post">
+                {% csrf_token %}
                 <button name="download" id="download">download</button>
                 <button name="delete" id="delete">delete</button>
-            </div>
+            </form>
         </div>
     </div>
 {% endblock %}
