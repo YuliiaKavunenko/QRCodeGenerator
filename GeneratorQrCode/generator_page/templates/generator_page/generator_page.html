@@ -3,9 +3,10 @@
 {% load static %}
 
 {% block links %}
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling/lib/qr-code-styling.min.js"></script>
     <link rel="stylesheet" href="{% static 'generator_page/css/generator_page.css' %}">
     <script src="{% static 'generator_page/js/generator_page.js' %}" defer></script>
-    {% endblock %}
+{% endblock %}
 
 {% block title %}
     Generator QR codes
@@ -16,18 +17,23 @@
 {% endblock %}
 
 {% block content %}
+    <div id = 'message-background' style="display: none;">
+        <div id = 'message-to-user'>
+            <h3>
+                CHANGE YOUR PLAN TO CREATE MORE QR CODES!
+            </h3>
+            <p>Go to <a href="{% url 'subscription' %}">subscriptions</a></p>
+        </div>
+    </div>
+    <h3>Generate your QR code!</h3>
     <div id="qr-wrapper">
+        
         <form id="qr-settings-window">
             {% csrf_token %}
             <input type="text" name="QR-code-name" placeholder="QR code name" id="QR-code-name">
             <input type="text" name="your-link" placeholder="Your link" id="your-link">
             <button type="button" id="go-to-design">Go to design</button>
         </form>
-        <div id="QR-code-frame">
-            <div id="QR-code-image">
-
-            </div>
-        </div>
     </div>
     <div id="block-design">
         <form id="qr-wrapper-design" method="post">
@@ -43,12 +49,23 @@
                     <button type="submit" id="generate">Generate</button>
                 </div>
                 <div id="frame-window">
-                    <h1>frame</h1>
-                    <button name="shape1" id="shape1">shape1</button>
-                    <button name="shape2" id="shape2">shape2</button>
-                    <button name="shape3" id="shape3">shape3</button>
-                    <button name="shape4" id="shape4">shape4</button>
+                    <label class = 'choose-style'>
+                        <input type="radio" name="shape" value="standard" class = 'radiobutton-choose-style' checked> Standard
+                    </label>
+                    <label class = 'choose-style'>
+                        <input type="radio" name="shape" value="shape1" class = 'radiobutton-choose-style'> Shape 1
+                    </label>
+                    <label class = 'choose-style'>
+                        <input type="radio" name="shape" value="shape2" class = 'radiobutton-choose-style'> Shape 2
+                    </label>
+                    <label class = 'choose-style'>
+                        <input type="radio" name="shape" value="shape3" class = 'radiobutton-choose-style'> Shape 3
+                    </label>
+                    <label class = 'choose-style'>
+                        <input type="radio" name="shape" value="shape4" class = 'radiobutton-choose-style'> Shape 4
+                    </label>
                 </div>
+                
             </div>
             
         </form>
@@ -64,4 +81,3 @@
     
     
 {% endblock %}
-

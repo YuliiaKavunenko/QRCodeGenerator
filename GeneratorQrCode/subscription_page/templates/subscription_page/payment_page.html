@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'subscription_page/css/payment_page.css' %}">
+    
+{% endblock %}
+
+{% block title %}
+    Subscriptions Payment
+{% endblock %}
+
+{% block head %}
+    
+{% endblock %}
+
+{% block content %}
+    <h3>Payment</h3>
+    <p>You are purchasing the <strong>{{ new_subscription }}</strong> plan.</p>
+
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="password">Enter your password to confirm payment:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Complete Payment</button>
+    </form>
+{% endblock %}

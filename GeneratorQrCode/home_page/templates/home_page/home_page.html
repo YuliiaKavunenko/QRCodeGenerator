@@ -77,10 +77,12 @@
                             registered user can create one QR code for 6 months free of charge.
                         </h3>
                     </div>
-
-                    <div id = 'more-info'>
-                        <img src="{% static 'home_page/img/arrow.png' %}" alt="more info">
-                    </div>
+                    <form method = "post">
+                        {% csrf_token %}
+                        <button class = 'more-info'>
+                            <img src="{% static 'home_page/img/arrow.png' %}" alt="more info">
+                        </button>
+                    </form>
                 </div>
 
                 <div id = 'standart' class = 'examples'>
@@ -93,9 +95,12 @@
                         </h3>
                     </div>
 
-                    <div id = 'more-info'>
-                        <img src="{% static 'home_page/img/arrow.png' %}" alt="more info">
-                    </div>
+                    <form method = "post">
+                        {% csrf_token %}
+                        <button class = 'more-info'>
+                            <img src="{% static 'home_page/img/arrow.png' %}" alt="more info">
+                        </button>
+                    </form>
                 </div>
 
                 <div id = 'pro' class = 'examples'>
@@ -108,9 +113,12 @@
                         </h3>
                     </div>
 
-                    <div id = 'more-info'>
-                        <img src="{% static 'home_page/img/arrow.png' %}" alt="more info">
-                    </div>
+                    <form method = "post">
+                        {% csrf_token %}
+                        <button class = 'more-info'>
+                            <img src="{% static 'home_page/img/arrow.png' %}" alt="more info">
+                        </button>
+                    </form>
                 </div>
             </div>
 

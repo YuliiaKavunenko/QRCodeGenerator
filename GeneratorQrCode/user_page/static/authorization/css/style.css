@@ -110,8 +110,9 @@ h2{
 }
 
 #log-in:hover{
-    background-color: #e8f5f0;
-    color: #A8BDB6;
+    background-color: #A8BDB6;
+    color: #EEFDFF;
+    border: 3px #EEFDFF solid;
 }
 
 #registration-link{

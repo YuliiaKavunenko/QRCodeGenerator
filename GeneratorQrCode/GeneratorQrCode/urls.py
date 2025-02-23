@@ -24,6 +24,7 @@ from generator_page.views import render_generatorpage
 from my_qrcodes_page.views import render_myqrcodespage
 from contacts_page.views import render_contacts_page
 from subscription_page.views import render_subscription_page
+from subscription_page.views import render_payment_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,6 +37,7 @@ urlpatterns = [
     path("my_qrcodes_page/", render_myqrcodespage, name = "myqrcodes"),
     path('contacts_page/', render_contacts_page, name = "contacts"),
     path('subscription_page/', render_subscription_page, name = "subscription"),
+    path('payment_page/', render_payment_page, name = "payment"),
 ]
 
 if settings.DEBUG:

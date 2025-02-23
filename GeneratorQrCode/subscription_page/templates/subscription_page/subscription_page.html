@@ -4,7 +4,7 @@
 
 {% block links %}
     <link rel="stylesheet" href="{% static 'subscription_page/css/subscription_page.css' %}">
-    <script src="{% static 'subscription_page/js/subscription_page.js' %}" defer></script>
+    
 {% endblock %}
 
 {% block title %}
@@ -16,6 +16,75 @@
 {% endblock %}
 
 {% block content %}
+
+    {%  if not is_authorizated %}
+        <h3>You should <a href="{% url 'authorization' %}">log in</a> first!</h3>
+    {% else %}
+        <h3>Choose better plan for you!</h3>
+        <div id = 'plans-container'>
+            <!-- FREE -->
+            <div class = 'plan-card'>
+                {% if request.user.subscription.subscription_type == "free" %}
+                    <h3>YOUR PLAN</h3>
+                {% else %}
+                    <form method = "post">
+                        {% csrf_token %}
+                        <button id = 'change-free'>CHANGE PLAN</button>
+                    </form>
+                {% endif %}
+                <h4>FREE</h4>
+                <div id = 'possibilities-box-free' class = 'possibilities-box'>
+                    <h5>possibilities:</h5>
+                    <p>one QR code for 6 months free of charge</p>
+                </div>
+                <div id = 'price-box-free' class = 'price-box'>
+                    <h5>price:</h5>
+                    <p>0$</p>
+                </div>
+            </div>
+            <!-- STANDART -->
+            <div class = 'plan-card'>
+                {% if request.user.subscription.subscription_type == "standart" %}
+                    <h3>YOUR PLAN</h3>
+                {% else %}
+                    <form method = "post">
+                        {% csrf_token %}
+                        <button id = 'change-standart'>CHANGE PLAN</button>
+                    </form>
+                {% endif %}
+                <h4>STANDART</h4>
+                <div id = 'possibilities-box-standart' class = 'possibilities-box'>
+                    <h5>possibilities:</h5>
+                    <p>10 customized QR codes</p>
+                </div>
+                <div id = 'price-box-standart' class = 'price-box'>
+                    <h5>price:</h5>
+                    <p>2$</p>
+                </div>
+            </div>
+            <!-- PRO -->
+            <div class = 'plan-card'>
+                {% if request.user.subscription.subscription_type == "pro" %}
+                    <h3>YOUR PLAN</h3>
+                {% else %}
+                    <form method = "post">
+                        {% csrf_token %}
+                        <button id = 'change-pro'>CHANGE PLAN</button>
+                    </form>
+                {% endif %}
+                <h4>PRO</h4>
+                <div id = 'possibilities-box-pro' class = 'possibilities-box'>
+                    <h5>possibilities:</h5>
+                    <p>up to 100 QR codess</p>
+                </div>
+                <div id = 'price-box-pro' class = 'price-box'>
+                    <h5>price:</h5>
+                    <p>10$</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <script src="{% static 'subscription_page/js/subscription_page.js' %}" defer></script>
     
 {% endblock %}
 

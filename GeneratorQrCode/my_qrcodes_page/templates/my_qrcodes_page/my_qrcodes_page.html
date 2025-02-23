@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% load static %}
 
 {% block links %}
@@ -10,20 +9,46 @@
     My QR codes
 {% endblock %}
 
-{% block head %}
-    
-{% endblock %}
-
 {% block content %}
-    <div id="my-saved-QR-code">
-        <div id="QR-code-image"></div>
-        <div id="info-section">
-            <h1>QR CODE NAME</h1>
-            <form method="post">
-                {% csrf_token %}
-                <button name="download" id="download">download</button>
-                <button name="delete" id="delete">delete</button>
-            </form>
+    {% if user_qrcodes %}
+        <div class="sort-container">
+            <label for="sort">Sort by date:</label>
+            <select id="sort">
+                <option value="default" {% if sort_order == "default" %}selected{% endif %}>Default (Newest first)</option>
+                <option value="desc" {% if sort_order == "desc" %}selected{% endif %}>Newest first</option>
+                <option value="asc" {% if sort_order == "asc" %}selected{% endif %}>Oldest first</option>
+            </select>
         </div>
-    </div>
+
+        <div class="qr-container">
+            {% for qr in user_qrcodes %}
+                <div id="my-saved-QR-code">
+                    <div class="qr-card">
+                        <div id="QR-code-image">
+                            <img src="{{ qr.picture.url }}" alt="{{ qr.name }}">
+                        </div>
+                        <div id="info-section">
+                            <h1>{{ qr.name }}</h1>
+                            <h1 class="qr-date">Created on: {{ qr.date|date:"Y-m-d H:i" }}</h1>
+                            <form method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="qr_id" value="{{ qr.id }}">
+                                <button name="action" value="download" id="download">Download</button>
+                                <button name="action" value="delete" id="delete">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% elif is_authorizated %}
+        <div id="no-qr-message">
+            <h3>You have no QR codes created!</h3>
+            <p>Move to <a href="{% url 'generate' %}">generate</a></p>
+        </div>
+    {% else %}
+        <h3>You should  <a href="{% url 'authorization' %}"> log in </a> first!</h3>
+    {% endif %}
+
+    <script src="{% static 'my_qrcodes_page/js/my_qrcodes_page.js' %}"></script>
 {% endblock %}

@@ -183,7 +183,7 @@
     color: #C4E3E6;
     font-family: 'Josefin Sans', sans-serif;
 }
-#more-info{
+.more-info{
     display: flex;
     width: 50px;
     height: 100%;
@@ -192,6 +192,13 @@
     background-color: #EEFDFF;
     border-radius: 10px;
     margin: 0;
+    border: 3px solid #98A6A1;
+}
+.more-info:hover{
+    background-color: #D6E3E5;
+    color: #EEFDFF;
+    border: 3px #EEFDFF solid;
+    cursor: pointer;
 }
 .examples img{
     display: flex;
@@ -211,4 +218,12 @@
     align-items: center;
     justify-content: center;
     margin-left: 21px;
+}
+.examples {
+    transition: transform 0.3s ease-out;
+    transform-origin: center;
+}
+
+.examples:hover {
+    transform: scale(1.05);
 }

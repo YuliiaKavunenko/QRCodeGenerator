@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
-# Create your views here.
 def render_home_page(request):
+    if request.method == "POST":
+        return redirect('subscription')
+
     return render(
         request=request,
         template_name="home_page/home_page.html",
