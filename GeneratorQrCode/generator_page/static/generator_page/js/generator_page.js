@@ -43,7 +43,7 @@ function updateQRCode() {
     let selectedShape = document.querySelector('input[name="shape"]:checked').value;
     let qrLink = document.getElementById("your-link").value;
 
-    // Генерация QR-кода с учетом белого отступа
+    // Генерация QR-кода
     let qr = new QRCodeStyling({
         width: size,
         height: size,
@@ -69,7 +69,7 @@ function updateQRCode() {
         let textElement = document.createElement("div");
         textElement.textContent = textToFrame;
 
-        // Стили для центрирования и отступа вниз
+        // для центрирования и отступа вниз
         textElement.style.textAlign = "center";
         textElement.style.fontFamily = "Josefin Sans";
         textElement.style.fontSize = "68px";

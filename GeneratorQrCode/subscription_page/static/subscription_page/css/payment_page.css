@@ -1,0 +1,62 @@
+h3{
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #EEFDFF;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 28px;
+    margin-top: 28px;
+    width: 100%;
+}
+
+#payment-container{
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #A8BDB6;
+    border-radius: 20px;
+}
+#form-payment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+#submit-payment{
+    width: 300px;
+    height: 60px;
+    background-color: #EEFDFF;
+    color: #A8BDB6;
+    font-family: Josefin Sans;
+    font-size: 30px ;
+    border-radius: 15px;
+    border: 3px #98A6A1 solid;
+    cursor: pointer;
+    font-weight: bold;
+}
+p, label{
+    color: #EEFDFF;
+    font-family: Josefin Sans;
+    font-size: 30px;
+    font-weight: bold;
+}
+input{
+    width: 300px;
+    height: 60px;
+    background-color: #EEFDFF;
+    color: #A8BDB6;
+    font-family: Josefin Sans;
+    font-size: 30px ;
+    border-radius: 15px;
+    border: 3px #98A6A1 solid;
+}
+#submit-payment:hover{
+    background-color: #A8BDB6;
+    color: #EEFDFF;
+    border: 3px #EEFDFF solid;
+}

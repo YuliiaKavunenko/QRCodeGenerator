@@ -41,5 +41,8 @@ def render_myqrcodespage(request):
     return render(
         request,
         "my_qrcodes_page/my_qrcodes_page.html",
-        {"user_qrcodes": user_qrcodes},
+        {
+            "user_qrcodes": user_qrcodes,
+            'is_authorizated': request.user.is_authenticated,
+        },
     )

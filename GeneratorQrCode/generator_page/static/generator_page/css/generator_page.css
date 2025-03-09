@@ -258,3 +258,15 @@ h3{
     background-color: #A8BDB6;
     border-color: #98A6A1;
 }
+#link-to-subscription{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    font-size: 32px;
+    color: #C76363;
+    font-family: 'Josefin Sans', sans-serif;
+}

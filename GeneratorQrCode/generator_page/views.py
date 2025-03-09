@@ -6,8 +6,12 @@ from django.http import HttpResponse
 from .models import QRCodes
 from PIL import Image, ImageDraw
 from PIL import ImageFont
+from subscription_page.models import Subscription
+from django.utils.timezone import now
+from datetime import timedelta
 
 def render_generatorpage(request):
+    qr_limit = 1
     if request.method == "GET" and "download" in request.GET:
         qr_id = request.GET.get("download")
         try:
@@ -20,10 +24,31 @@ def render_generatorpage(request):
 
     qr_instance = None
     download_link = None
+    subscription = Subscription.objects.filter(user=request.user).first()
+    if subscription:
+        print('subscription.subscription_type:', subscription.subscription_type)
+        if subscription.subscription_type == "free":
+            qr_limit = 1
+        elif subscription.subscription_type == "standart":
+            qr_limit = 10
+        elif subscription.subscription_type == "pro":
+            qr_limit = 100
+        else:
+            qr_limit = 1
+    else:
+        print('subscription is None')
+        qr_limit = 1
+    user_qr_count = QRCodes.objects.filter(user=request.user).count()
 
     if request.method == "POST" and request.user.is_authenticated:
         action = request.POST.get("action")
         if action == "generate":
+            
+            if user_qr_count >= qr_limit:
+                return render(request, 'generator_page/generator_page.html', {
+                    'message': 'You have reached the limit of QR codes for your subscription. Upgrade to create more.'
+                })
+            
             qr_name = request.POST.get("QR-code-name")
             qr_link = request.POST.get("your-link")
             color = request.POST.get("color", "#000000")
@@ -118,5 +143,10 @@ def render_generatorpage(request):
     return render(
         request=request,
         template_name='generator_page/generator_page.html',
-        context={'qr_instance': qr_instance, 'download_link': download_link}
+        context={
+        'qr_instance': qr_instance,
+        'download_link': download_link,
+        'qr_limit': qr_limit,
+        'user_qr_count': user_qr_count,
+    }
     )

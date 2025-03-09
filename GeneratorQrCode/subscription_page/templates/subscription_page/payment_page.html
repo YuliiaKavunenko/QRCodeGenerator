@@ -16,17 +16,20 @@
 {% endblock %}
 
 {% block content %}
-    <h3>Payment</h3>
-    <p>You are purchasing the <strong>{{ new_subscription }}</strong> plan.</p>
+    <div id = 'payment-container'>
+        <h3>Payment</h3>
+        <p>You are purchasing the <strong>{{ new_subscription }}</strong> plan.</p>
 
-    {% if error_message %}
-        <p style="color: red;">{{ error_message }}</p>
-    {% endif %}
+        {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
 
-    <form method="post">
-        {% csrf_token %}
-        <label for="password">Enter your password to confirm payment:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Complete Payment</button>
-    </form>
+        <form method="post" id = 'form-payment'>
+            {% csrf_token %}
+            <label for="password">Enter your password to confirm payment:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" id = 'submit-payment'>Complete Payment</button>
+        </form>
+    </div>
+    
 {% endblock %}

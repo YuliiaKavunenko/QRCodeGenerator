@@ -29,7 +29,7 @@
                 {% else %}
                     <form method = "post">
                         {% csrf_token %}
-                        <button id = 'change-free'>CHANGE PLAN</button>
+                        <button type="submit" name="plan" value="free" id = 'change-free'>CHANGE PLAN</button>
                     </form>
                 {% endif %}
                 <h4>FREE</h4>
@@ -49,7 +49,7 @@
                 {% else %}
                     <form method = "post">
                         {% csrf_token %}
-                        <button id = 'change-standart'>CHANGE PLAN</button>
+                        <button type="submit" name="plan" value="standart" id = 'change-standart'>CHANGE PLAN</button>
                     </form>
                 {% endif %}
                 <h4>STANDART</h4>
@@ -69,7 +69,7 @@
                 {% else %}
                     <form method = "post">
                         {% csrf_token %}
-                        <button id = 'change-pro'>CHANGE PLAN</button>
+                        <button type="submit" name="plan" value="pro" id = 'change-pro'>CHANGE PLAN</button>
                     </form>
                 {% endif %}
                 <h4>PRO</h4>

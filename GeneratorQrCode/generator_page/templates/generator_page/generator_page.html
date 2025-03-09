@@ -26,58 +26,65 @@
         </div>
     </div>
     <h3>Generate your QR code!</h3>
-    <div id="qr-wrapper">
-        
-        <form id="qr-settings-window">
-            {% csrf_token %}
-            <input type="text" name="QR-code-name" placeholder="QR code name" id="QR-code-name">
-            <input type="text" name="your-link" placeholder="Your link" id="your-link">
-            <button type="button" id="go-to-design">Go to design</button>
-        </form>
-    </div>
-    <div id="block-design">
-        <form id="qr-wrapper-design" method="post">
-            {% csrf_token %}
-            <div id="qr-design-window">
-                <input type="hidden" name="action" value="generate">
-                <input type="hidden" name="QR-code-name" id="hidden-QR-code-name">
-                <input type="hidden" name="your-link" id="hidden-your-link">
-                <div id="inputs-container">
-                    <input type="color" name="color" placeholder="Color" id="color">
-                    <input type="number" name="size" placeholder="Size" id="size" min="100" max="1000">
-                    <input type="text" name="text-to-frame" placeholder="Text to frame" id="text-to-frame">
-                    <button type="submit" id="generate">Generate</button>
-                </div>
-                <div id="frame-window">
-                    <label class = 'choose-style'>
-                        <input type="radio" name="shape" value="standard" class = 'radiobutton-choose-style' checked> Standard
-                    </label>
-                    <label class = 'choose-style'>
-                        <input type="radio" name="shape" value="shape1" class = 'radiobutton-choose-style'> Shape 1
-                    </label>
-                    <label class = 'choose-style'>
-                        <input type="radio" name="shape" value="shape2" class = 'radiobutton-choose-style'> Shape 2
-                    </label>
-                    <label class = 'choose-style'>
-                        <input type="radio" name="shape" value="shape3" class = 'radiobutton-choose-style'> Shape 3
-                    </label>
-                    <label class = 'choose-style'>
-                        <input type="radio" name="shape" value="shape4" class = 'radiobutton-choose-style'> Shape 4
-                    </label>
+    <h3>You have used {{ user_qr_count }} out of {{ qr_limit }} QR codes</h3>
+    {% if user_qr_count >= qr_limit %}
+        <h3>You have reached your limit! Go to</h3><a id = 'link-to-subscription' href="{% url 'subscription' %}">subscriptions</a>
+    {% else %}
+        <div id="qr-wrapper">
+            
+            <form id="qr-settings-window">
+                {% csrf_token %}
+                <input type="text" name="QR-code-name" placeholder="QR code name" id="QR-code-name">
+                <input type="text" name="your-link" placeholder="Your link" id="your-link">
+                <button type="button" id="go-to-design">Go to design</button>
+            </form>
+        </div>
+        <div id="block-design">
+            <form id="qr-wrapper-design" method="post">
+                {% csrf_token %}
+                <div id="qr-design-window">
+                    <input type="hidden" name="action" value="generate">
+                    <input type="hidden" name="QR-code-name" id="hidden-QR-code-name">
+                    <input type="hidden" name="your-link" id="hidden-your-link">
+                    <div id="inputs-container">
+                        <input type="color" name="color" placeholder="Color" id="color">
+                        <input type="number" name="size" placeholder="Size" id="size" min="100" max="1000">
+                        <input type="text" name="text-to-frame" placeholder="Text to frame" id="text-to-frame">
+                        <button type="submit" id="generate">Generate</button>
+                    </div>
+                    <div id="frame-window">
+                        <label class = 'choose-style'>
+                            <input type="radio" name="shape" value="standard" class = 'radiobutton-choose-style' checked> Standard
+                        </label>
+                        <label class = 'choose-style'>
+                            <input type="radio" name="shape" value="shape1" class = 'radiobutton-choose-style'> Shape 1
+                        </label>
+                        <label class = 'choose-style'>
+                            <input type="radio" name="shape" value="shape2" class = 'radiobutton-choose-style'> Shape 2
+                        </label>
+                        <label class = 'choose-style'>
+                            <input type="radio" name="shape" value="shape3" class = 'radiobutton-choose-style'> Shape 3
+                        </label>
+                        <label class = 'choose-style'>
+                            <input type="radio" name="shape" value="shape4" class = 'radiobutton-choose-style'> Shape 4
+                        </label>
+                    </div>
+                    
                 </div>
                 
+            </form>
+            <div id="QR-code-frame-design">
+                {% if qr_instance %}
+                    <img src="{{ qr_instance.picture.url }}" alt="Generated QR Code">
+                    <a href="{{ download_link }}" download>
+                        <button id="download">Download</button>
+                    </a>
+                {% endif %}
             </div>
-            
-        </form>
-        <div id="QR-code-frame-design">
-            {% if qr_instance %}
-                <img src="{{ qr_instance.picture.url }}" alt="Generated QR Code">
-                <a href="{{ download_link }}" download>
-                    <button id="download">Download</button>
-                </a>
-            {% endif %}
         </div>
-    </div>
+
+    {% endif %}
+    
     
     
 {% endblock %}
