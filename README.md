@@ -482,7 +482,7 @@ class QRCodes(models.Model):
 ### Встановлення: / Installation:
 Зробіть копію проєкту / Make a copy of the project
 ```bash
-  git clone 
+  git clone https://github.com/YuliiaKavunenko/QRCodeGenerator.git
 ```
 Перейдіть до папки з проєктом / Go to the project folder
 ```bash
