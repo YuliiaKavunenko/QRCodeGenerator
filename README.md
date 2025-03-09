@@ -12,7 +12,9 @@
   - [Subscription Page](#5-subscription_page)
   - [User Page](#6-user_page)
 - [Підписки / Subscriptions](#принцип-роботи-підписок-та-їх-особливості--how-subscriptions-work-and-their-features)
-
+- [Реалізація структури моделей / Model Structure Implementation](#реалізація-структури-моделей--model-structure-implementation)
+- [Встановлення і запуск проєкту / Installation and Project Launch](#встановлення-і-запуск-проєкту--installation-and-project-launch)
+- [Висновок / Conclusion](#висновок--conclusion)
 ### Мета проєкту: / Project goal:
 - Поглиблення знань у Django та роботі з базою даних SQLite на практиці / Deepening knowledge in Django and working with the SQLite database in practice
 - Поліпшення навичок командної роботи / Improving teamwork skills
