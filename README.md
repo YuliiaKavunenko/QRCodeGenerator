@@ -238,7 +238,7 @@ def render_generatorpage(request):
     )
 
 ```
-## 4 `my_qrcodes_page`
+>- ## 3 `my_qrcodes_page`
 **Призначення: / Appointment:**
 - Відображення всіх QR-кодів, створених користувачем. / Display all QR codes created by the user.
 - Можливість фільтрації за датою створення та назвою. / Ability to filter by creation date and name.
@@ -299,7 +299,7 @@ def render_myqrcodespage(request):
     )
 
 ```
-## 5 `subscription_page`
+>- ## 4 `subscription_page`
 **Призначення: / Appointment:**
 - Керування підписками користувача / Manage user subscriptions (Free, Standart, Pro).
 
@@ -370,7 +370,7 @@ def render_payment_page(request):
 
 
 ```
-## 6 `user_page`
+>- ## 5 `user_page`
 **Призначення: / Appointment:**
 - Відображення профілю користувача. / Displaying the user profile.
 - Налаштування акаунта. / Account settings.
