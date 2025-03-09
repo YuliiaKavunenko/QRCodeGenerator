@@ -15,6 +15,7 @@
 - [Реалізація структури моделей / Model Structure Implementation](#реалізація-структури-моделей--model-structure-implementation)
 - [Встановлення і запуск проєкту / Installation and Project Launch](#встановлення-і-запуск-проєкту--installation-and-project-launch)
 - [Висновок / Conclusion](#висновок--conclusion)
+
 ### Мета проєкту: / Project goal:
 - Поглиблення знань у Django та роботі з базою даних SQLite на практиці / Deepening knowledge in Django and working with the SQLite database in practice
 - Поліпшення навичок командної роботи / Improving teamwork skills
@@ -516,3 +517,7 @@ class QRCodes(models.Model):
 - **Захист даних / Data protection** та безпечна аутентифікація користувачів із підтвердженням email; / and secure user authentication with email confirmation;
 
 Проєкт у майбутньому буде легко масштабувати та розширювати, завдяки зручній структурі проєкту. / The project will be easy to scale and expand in the future, thanks to the convenient project structure.
+<<<<<<< HEAD
+=======
+
+>>>>>>> e884f8ad4cff77e9ee7100d610b2076c8852d9d4
